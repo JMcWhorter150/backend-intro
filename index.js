@@ -1,5 +1,6 @@
 const fs = require('fs');
-const printer= require('./printer');
+const {printContents, printSentiment} = require('./printer');
+// This is the destructuring syntax
 
 const fileName = process.argv[2];
 // console.log(fileName);
@@ -7,4 +8,4 @@ const fileName = process.argv[2];
 // Error-first callback
 
 
-fs.readFile(fileName, printer.printSentiment);
+fs.readFile(fileName, printSentiment);

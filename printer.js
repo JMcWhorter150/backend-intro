@@ -25,7 +25,9 @@ function printSentiment(error, buffer) {
 // module.exports = printContents;
 // module.exports = printSentiment;
 
+
+// You can omit the colon and the value if the value is the same word as the key
 module.exports = {
-    printContents: printContents,
-    printSentiment: printSentiment
+    printContents,
+    printSentiment,
 };
