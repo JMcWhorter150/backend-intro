@@ -1,0 +1,31 @@
+// Importing the sentiment module from the project's node_modules directory
+const Sentiment = require(`sentiment`);
+
+// Create a new Sentiment analyzer object/instance
+const sentiment = new Sentiment();
+
+function printContents(error, buffer) {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log(buffer.toString());
+    }
+}
+
+function printSentiment(error, buffer) {
+    if (error) {
+        console.log(error);
+    } else {
+        const result = sentiment.analyze(buffer.toString());
+        console.dir(result);
+    }
+}
+
+// Doesn't work because it's assignment and sentiment overwrites printContents
+// module.exports = printContents;
+// module.exports = printSentiment;
+
+module.exports = {
+    printContents: printContents,
+    printSentiment: printSentiment
+};
